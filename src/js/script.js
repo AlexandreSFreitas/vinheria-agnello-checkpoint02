@@ -63,12 +63,13 @@ while (continuar == "Sim" || continuar == "sim") {
     todosTipos += tipoDeVinho + ", ";
     todasSafras += safraAno + ", ";
     todasIdades += idade + ", ";
+    todosEstoques += estoque + ", ";
 
     var continuar = prompt("Você deseja cadastrar outro produto? Digite Sim para continuar, qualquer outro para parar.");
     if (continuar != "Sim" && continuar != "sim"){
         alert("Produtos cadastrados, por favor verifique as informações no console.")
         //MOSTRANDO AS INFORMAÇÕES NO CONSOLE
-        console.log(`-Nome: ${todosNomes}\n-Tipos: ${todosTipos}\n-Safras: ${todasSafras}\n-Idades: ${todasIdades}\n-Estoque: ${estoque}\n-Vinhos em estoque baixo: ${estoqueBaixo}\n-Cadastros: ${cadastros}/n-Estoques${todosEstoques}`);
+        console.log(`-Nome: ${todosNomes}\n-Tipos: ${todosTipos}\n-Safras: ${todasSafras}\n-Idades: ${todasIdades}\n-Estoque: ${todosEstoques}\n-Vinhos em estoque baixo: ${estoqueBaixo}\n-Cadastros: ${cadastros}`);
         console.log(`O vinho com a safra mais velha é ${nomeVelho} da safra ${idadeVelho}`);
     }
 }
