@@ -1,8 +1,15 @@
 //Adicionando função ao botão
 function cadastrarProduto(){
 var estoqueBaixo = 0;
+var cadastros = 0;
 var continuar = "Sim";
+var todosNomes = "";
+var todosTipos = ""; 
+var todasSafras = ""; 
+var todasIdades = "";
+
 while (continuar == "Sim" || continuar == "sim") {
+    cadastros++;
     //Solicitando o nome do vinho ao usuário. 
     var nome = prompt("Insira o nome do vinho.");
     while(!isNaN(nome) || nome == ''){
@@ -19,7 +26,7 @@ while (continuar == "Sim" || continuar == "sim") {
     //Solicitando a safra
     var safraAno = prompt("Qual é a safra do vinho?");
     while(isNaN(safraAno) || safraAno == ''){
-        alert("Por favor, insirá o ano da safra!");
+        alert("Por favor, insira o ano da safra!");
         var safraAno = prompt("Qual é a safra do vinho?");
     }
     //solicitando a quantidade do estoque
@@ -45,11 +52,17 @@ while (continuar == "Sim" || continuar == "sim") {
     else if (safraAno < 2015){
         var idade = 'Vinho Antigo';
     }
+
+    todosNomes += nome + ", ";
+    todosTipos += tipoDeVinho + ", ";
+    todasSafras += safraAno + ", ";
+    todasIdades += idade + ", ";
+
     var continuar = prompt("Você deseja cadastrar outro produto?");
-    if (continuar != "Sim" || continuar != "sim"){
+    if (continuar != "Sim" && continuar != "sim"){
         alert("Produtos cadastrados, por favor verifique as informações no console.")
         //MOSTRANDO AS INFORMAÇÕES NO CONSOLE
-        console.log(`-Nome: ${nome}\n-Tipo: ${tipoDeVinho}\n-Safra: ${safraAno}\n-Estoque: ${estoque}\n-Idade: ${idade}\n-Vinhos em estoque baixo: ${estoqueBaixo}`);
+        console.log(`-Nome: ${todosNomes}\n-Tipo: ${todosTipos}\n-Safra: ${todasSafras}\n-Idade: ${todasIdades}\n-Estoque: ${estoque}\n-Vinhos em estoque baixo: ${estoqueBaixo}\n-Cadastros: ${cadastros}`);
     }
 }
 }
